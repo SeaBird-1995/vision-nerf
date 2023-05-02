@@ -89,8 +89,8 @@ class SRNDataset(Dataset):
             self.z_near = 1.25
             self.z_far = 2.75
         else:
-            self.z_near = 0.8
-            self.z_far = 1.8
+            self.z_near = 0.75
+            self.z_far = 2.25
 
     def __len__(self):
         return len(self.intrinsics)
@@ -140,6 +140,9 @@ class SRNDataset(Dataset):
         xx = torch.any(tgt_mask, axis=1)
         ynz = torch.nonzero(yy)[:, 1]
         xnz = torch.nonzero(xx)[:, 1]
+        if len(ynz) == 0:
+            raise RuntimeError(
+                "ERROR: Bad image at", rgb_path, "please investigate!")
         ymin, ymax = ynz[[0, -1]]
         xmin, xmax = xnz[[0, -1]]
         tgt_bbox = torch.FloatTensor([xmin, ymin, xmax, ymax])

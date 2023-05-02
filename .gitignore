@@ -1,2 +1,6 @@
+dataset/
+.vscode
+experiments
+
 __pycache__/
 *.pyc

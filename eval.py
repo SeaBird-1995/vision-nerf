@@ -184,9 +184,12 @@ class SRNRenderDataset(Dataset):
         if is_chair:
             self.z_near = 1.25
             self.z_far = 2.75
+        # else:
+        #     self.z_near = 0.8
+        #     self.z_far = 1.8
         else:
-            self.z_near = 0.8
-            self.z_far = 1.8
+            self.z_near = 0.75
+            self.z_far = 2.25
 
     def __len__(self):
         return len(self.intrinsics)
@@ -369,6 +372,9 @@ def gen_eval(args):
                 rgb_im = (rgb_im * 255.).astype(np.uint8)
                 imageio.imwrite(filename, rgb_im)
                 torch.cuda.empty_cache()
+
+                ## save the sampled point cloud
+                
 
 if __name__ == '__main__':
     parser = config_parser()

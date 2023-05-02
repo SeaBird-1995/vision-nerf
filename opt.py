@@ -10,7 +10,7 @@ def config_parser():
     parser.add_argument('--ckptdir', type=str, help='checkpoint folder')
     parser.add_argument('--distributed', action='store_true', help='if use distributed training')
     parser.add_argument("--local_rank", type=int, default=0, help='rank for distributed training')
-    parser.add_argument('-j', '--workers', default=0, type=int, metavar='N',
+    parser.add_argument('-j', '--workers', default=16, type=int, metavar='N',
                         help='number of data loading workers (default: 8)')
     parser.add_argument('--debug', action='store_true', help='debug mode (only takes one datum)')
 

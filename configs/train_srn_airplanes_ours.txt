@@ -1,0 +1,27 @@
+expname = srn_airplanes
+logdir = experiments/official_train_bs16
+ckptdir = experiments/official_train_bs16/ckpts
+data_path = ./dataset/srn_airplanes/airplanes # example: /home/ken/dataset/srn_cars/cars
+img_hw = [128, 128]
+N_rand = 512
+batch_size = 16
+chunk_size = 2048
+# Change batch_size and chunk_size if you have beefy machines
+# batch_size = 8
+# chunk_size = 2048
+mlp_block_num = 6
+im_feat_dim = 512
+lrate_feature = 1e-5
+lrate_mlp = 1e-4
+scheduler = steplr
+sample_mode = bbox_sample_full
+bbox_steps = 500000
+use_warmup = True
+warmup_steps = 10000
+lrate_decay_factor = 0.1
+lrate_decay_steps = 450000
+n_iters = 500000
+distributed = False
+white_bkgd = True
+freeze_pos_embed = False
+no_skip_conv = False

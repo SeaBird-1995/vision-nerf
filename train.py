@@ -47,7 +47,7 @@ def workder_init_fn(worker_id):
     random.seed(worker_seed)
     torch.manual_seed(worker_seed)
     torch.cuda.manual_seed_all(worker_seed)
-    torch.set_deterministic(True)
+    torch.use_deterministic_algorithms(True)
 
 def synchronize():
     """

@@ -1,0 +1,12 @@
+expname = srn_airplanes
+ckptdir = "experiments/official_train_bs16/ckpts/srn_airplanes" # ckptdir = "experiments/official_train/ckpts/srn_chairs"
+ckpt_path = "experiments/official_train_bs16/ckpts/srn_airplanes/model_225000.pth"
+data_path = ./dataset/srn_airplanes/airplanes_val
+outdir = experiments/test_airplanes_our_trained
+img_hw = [128, 128]
+chunk_size = 16384 # Increase this if you have large GPU memory
+mlp_block_num = 6
+white_bkgd = True
+im_feat_dim = 512
+skip = 1
+data_range = [0, 200] # Change this to render more data
