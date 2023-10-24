@@ -1,4 +1,4 @@
-expname = srn_airplanes
+expname = srn_airplanes_debug
 ckptdir = "experiments/official_train_bs16/ckpts/srn_airplanes" # ckptdir = "experiments/official_train/ckpts/srn_chairs"
 ckpt_path = "experiments/official_train_bs16/ckpts/srn_airplanes/model_225000.pth"
 data_path = ./dataset/srn_airplanes/airplanes_val

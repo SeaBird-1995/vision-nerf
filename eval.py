@@ -156,6 +156,9 @@ class SRNRenderDataset(Dataset):
             glob.glob(os.path.join(self.base_path, "*", "intrinsics.txt"))
         )
 
+        # for debug
+        intrinsic_paths = intrinsic_paths[:50]
+
         self.intrinsics = []
         self.poses = []
         self.rgb_paths = []
@@ -372,9 +375,10 @@ def gen_eval(args):
                 rgb_im = (rgb_im * 255.).astype(np.uint8)
                 imageio.imwrite(filename, rgb_im)
                 torch.cuda.empty_cache()
+                
 
                 ## save the sampled point cloud
-                
+
 
 if __name__ == '__main__':
     parser = config_parser()
